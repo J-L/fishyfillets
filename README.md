@@ -1,5 +1,6 @@
 # Data Structures
 
+```
 Fish: {
 	species: string
 	mislabelRate: double
@@ -24,6 +25,7 @@ SearchResult: {
 	matchedFishes: Fish[]
 	matchedDistributors: [{distributor: Distributor, reports: Reports}]
 }
+```
 
 # API
 
@@ -32,6 +34,7 @@ SearchResult: {
 Search against known fish species and distributors
 
 @QueryParam term
+
 @Return SearchResult
 
 ## GET /fish
@@ -39,6 +42,7 @@ Search against known fish species and distributors
 Retrieve details about a fish
 
 @QueryParam species
+
 @Return Fish
 
 ## POST /report
@@ -46,5 +50,7 @@ Retrieve details about a fish
 Create a report
 
 @QueryParam distributorName
+
 @QueryParam mislabeledSpecies
+
 @QueryParam mislabeledAs
