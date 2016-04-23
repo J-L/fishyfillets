@@ -54,3 +54,12 @@ Create a report
 @QueryParam mislabeledSpecies
 
 @QueryParam mislabeledAs
+
+# Dev Setup
+
+```
+python3 application.py
+cd server/static
+npm install
+npm start
+```
