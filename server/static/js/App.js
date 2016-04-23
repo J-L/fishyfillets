@@ -11,6 +11,6 @@ import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router'
 render((
     <Router history={hashHistory}>
         <Route path="/" component={Search}/>
-        <Route path="/fish" component={Fish}/>
+        <Route path="/fish/:id" component={Fish}/>
     </Router>
 ), document.getElementById('container'));
