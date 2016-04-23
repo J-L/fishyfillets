@@ -2,8 +2,6 @@ import sys, os, platform,json,datetime,logging
 from flask import Flask,request
 from threading import Thread
 from flask.ext.sqlalchemy import SQLAlchemy
-from decimal import *
-from datetime import timedelta
 import requests
 
 app= Flask(__name__)
@@ -53,3 +51,6 @@ def send_email_message(to,sender, subject, message):
 
 
 import server.routes.test_point
+import server.routes.insert_fish
+import server.routes.search
+import server.routes.get_reports
