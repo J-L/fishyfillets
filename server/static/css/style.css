@@ -1,0 +1,11 @@
+.searchInput {
+    width: 200px;
+}
+.searchResult {
+    width: 200px;
+    display: block;
+}
+
+.searchResult .type {
+    float: right;
+}
