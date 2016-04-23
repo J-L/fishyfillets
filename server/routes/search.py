@@ -3,7 +3,7 @@ from server import *
 
 @app.route('/search')
 def search():
-    search_string = request.args.get('search_string')
+    search_string = request.args.get('term')
     if search_string is None:
         return "error" , 403
     else:
