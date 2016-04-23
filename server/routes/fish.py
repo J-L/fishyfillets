@@ -4,10 +4,10 @@ from server import *
 
 def get_fish():
     print ("get_fish")
-    search_string = request.args.get('name')
+    fish_id = request.url.split("/")[-1]
     for elem in r.keys():
         if search_string in elem:
-            return r.get("fish:"+search_string)
+            return r.get("fish:"+fish_id)
 
 
 def post_fish():
