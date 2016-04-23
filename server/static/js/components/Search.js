@@ -1,15 +1,15 @@
 /**
- * Created by shu on 11/5/15.
+ * Created by shu on 2016-04-22.
  */
 import React from 'react';
 import SearchBar from 'react-search-bar';
 
-class Root extends React.Component {
+class Search extends React.Component {
 
     render() {
         return (
             <div>
-                <span>Look up a fish or a distributor/seller</span>
+                <h3>Look up a fish or a distributor/seller</h3>
                 <SearchBar
                     autoFocus={true}
                     debounceDelay={1000}
@@ -20,6 +20,7 @@ class Root extends React.Component {
             </div>
         )
     }
+
 }
 
-export default Root;
+export default Search;
