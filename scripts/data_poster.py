@@ -4,7 +4,7 @@ fish_file_name = "fish.csv"
 distributor_file_name = "distributor.csv"
 base_url = "http://127.0.0.1:5000"
 insert_distributor_endpoint = "/distributor"
-insert_fish_endpoint = "/distributor"
+insert_fish_endpoint = "/fish"
 
 
 def insert_distibutor(file_name):
@@ -30,4 +30,4 @@ def insert_fish(file_name):
 
 if __name__ == "__main__":
     insert_fish(fish_file_name)
-    insert_distibutor(distributor_file_name)
+    #insert_distibutor(distributor_file_name)

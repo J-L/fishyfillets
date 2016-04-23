@@ -7,7 +7,15 @@ def get_fish(fish_id):
         print("GET fish: " + fish_id);
         fish = r.get("fish:"+str(fish_id))
         if fish is not None:
-            return fish
+            json_fish = json.loads(fish.decode('utf-8'))
+            json_fish["ConfusedFishes"] = []
+            array_of_confushed_fish_ids = str(json_fish["ConfusedSpecies"]).split(";")
+            for confused_fish_id in array_of_confushed_fish_ids:
+                print ("fish:"+str(int(confused_fish_id)))
+                confused_fish = r.get("fish:"+str(int(confused_fish_id)))
+                json_fish["ConfusedFishes"].append(json.loads(confused_fish.decode('utf-8')))
+            return json.dumps(json_fish)
+
         else:
             return ""
     except Exception as e:
