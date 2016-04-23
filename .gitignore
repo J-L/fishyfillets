@@ -1,5 +1,8 @@
-
 .idea/*
 *_pycache*
 server/static/node_modules/*
 server/static/webbundle.js
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
