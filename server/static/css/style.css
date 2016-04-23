@@ -1,11 +1,15 @@
 .searchInput {
-    width: 200px;
+    width: 400px;
 }
 .searchResult {
-    width: 200px;
+    width: 400px;
     display: block;
 }
 
 .searchResult .type {
     float: right;
+}
+
+.confusedFish {
+    display: block;
 }

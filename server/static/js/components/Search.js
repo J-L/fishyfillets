@@ -2,8 +2,8 @@
  * Created by shu on 2016-04-22.
  */
 import React from 'react';
-import { Link } from 'react-router'
-
+import { Link } from 'react-router';
+import client from '../utils/Client';
 
 const minCharsBeforeAutoComplete = 2;
 
@@ -33,36 +33,34 @@ class Search extends React.Component {
 
     _updateSuggestions(searchTerm) {
         let suggestions = [];
-        fetch('/search?term=' + searchTerm).then((response) => {
-            response.json().then((json) => {
-                json.matchedFishes.forEach(function(fish) {
-                    suggestions.push(
-                        <Link className="searchResult" key={'f_' + fish.id} to={`/fish/${fish.id}`}>
-                            <span className="name">{fish.name}</span>
-                            <span className="type">Fish</span>
-                        </Link>
-                    );
-                });
-
-                json.matchedDistributors.forEach(function(distributor) {
-                    suggestions.push(
-                        <Link className="searchResult" key={'d_' + distributor.id} to={`/distributor/${distributor.id}`}>
-                            <span className="name">{distributor.name}</span>
-                            <span className="type">Distributor</span>
-                        </Link>
-                    );
-                });
-
-                if (suggestions.length == 0) {
-                    suggestions.push(
-                        <div className="searchResult">
-                            <span className="name">No Results</span>
-                        </div>
-                    );
-                }
-
-                this.setState({suggestions: suggestions});
+        client.search(searchTerm, (json) => {
+            json.matchedFishes.forEach(function(fish) {
+                suggestions.push(
+                    <Link className="searchResult" key={'f_' + fish.id} to={`/fish/${fish.id}`}>
+                        <span className="name">{fish.name}</span>
+                        <span className="type">Fish</span>
+                    </Link>
+                );
             });
+
+            json.matchedDistributors.forEach(function(distributor) {
+                suggestions.push(
+                    <Link className="searchResult" key={'d_' + distributor.id} to={`/distributor/${distributor.id}`}>
+                        <span className="name">{distributor.name}</span>
+                        <span className="type">Distributor</span>
+                    </Link>
+                );
+            });
+
+            if (suggestions.length == 0) {
+                suggestions.push(
+                    <div className="searchResult">
+                        <span className="name">No Results</span>
+                    </div>
+                );
+            }
+
+            this.setState({suggestions: suggestions});
         });
     }
 
