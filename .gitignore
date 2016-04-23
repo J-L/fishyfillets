@@ -1,0 +1,5 @@
+
+.idea/*
+*_pycache*
+server/static/node_modules/*
+server/static/webbundle.js
