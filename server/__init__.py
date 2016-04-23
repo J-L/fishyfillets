@@ -46,8 +46,7 @@ def redirect_http(func):
 
 
 import server.routes.test_point
-import server.routes.insert_fish
-import server.routes.get_fish
+import server.routes.fish
 import server.routes.search
 import server.routes.get_reports
 import server.routes.insert_report

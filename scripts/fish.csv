@@ -1,0 +1,36 @@
+ID,CommonName,ScientificName,FrequencyMislabeling,ConfusedSpecies,WholePic,TinyPic,LargePic,FilletLength,FilletWeight,FilletColour,Description,SustainabilityRating,RecommendedConsumptionSize,Distribution/Region,Aquaculture/wild,Value,SoldAs
+1,Pink brotula (Pacific bearded brotula); Congrio rosado,Brotula clarkae,,,,,,Size of the whole fish can reach 98 cm. The length of fillets is 30-40 cm long and about 12-15 cm high.,The slices are processed in 100-200 g fillets.,Fresh fillets have a white to pale coloration pink. Thawed tend to be whitened or yellow. These changes are more evident if they remain frozen for more than two months. ,,,,,,,
+2,Pacific crevalle jack; Jurel toro,Caranx caninus,,,,,,N/A,,"The color is deep red meat , intermuscular white strands are appreciated.
+ Its smell should be fresh fished .","dark meat, sent to carribean side, low value",,,,,,
+3,Yellowfin snook; Gualaje,Centropomus robalito,,,,,,N/A,,The color of the meat is pink to white. It presents a line of darker color.,,,,,,,
+4,Mahi-Mahi; Dolphinfish; Dorado,Coryphaena hippurus,Sometimes,20; 21,,,,"The fillets measure between 60 to 70 cm long, and are about 20 cm wide.","The entire fish can weigh up to 25 kg and a slice up to 7 kg, but it's sold in 100-200 g fillets.","Its flesh is white, soft but firm texture. The market has a blood line feature , when it freezes and thaws takes a darker color.
+ ",,,,,,,
+5,Whitefin weakfish; Corvina reina,Cynoscion albus,,,,,,,,"It is a steak pink or white. When thawed coloration varies slightly, tending to yellowish . These changes are most dramatic when they remain frozen for more than two months.
+ You must not have strong or rancid odors .",,,,,,,
+6,Weakfish; Corvina aguada,Cynoscion squamipinnis,,,,,,,,"Fresh steak is thin and white pink. When it thaws it tends to be yellowish . These changes are most dramatic when freezing exceed two months.
+ You must not have strong or rancid odors .",,,,,,,
+7,Indo-Pacific sailfish; Pez vela,Istiophorus platypterus,,,,,,,,"The meat is red with a lot of white fibers . When it has been frozen coffee or changes to a yellowish hue . When cooked , the flesh becomes white .
+ The smell should be fresh fish. You must not have strong or rancid odors .",,,,,,,
+8,Striped marlin; Marlín rosado,Kajikia audax,,,,,,,,"The steaks are brick red. When it has been frozen this color changes to a coffee with yellowish hue .
+ You should not possess strong and rancid odors .",,,,,,,
+9,Yellow snapper; Pargo coliamarillo ,Lutjanus argentiventris,,,,,,,,"The meat is red to pink , with intramuscular white fibers .
+ You must not have strong or unpleasant odors.",,,,,,,
+10,Blue marlin; Marlín blanco,Makaira nigricans,,,,,,,,"Its flesh is white or gray , with a lot of white fibers . When it has been frozen, the color changes to brown or yellowish hue .
+ You must not have strong or rancid odors .",,,,,,,
+11,Tilapia; ,Oreochromis aureus,,,,,,,,"Fresh fillets have a pink color and defrosted tend to be white or yellow , depending on the time they remain frozen . When the product is fresh , your blood line is red . When it is frozen or when it has lost freshness , the line color is brown to black torma .
+ They have a slight odor.",,,,,,,
+12,Rainbow trout; Trucha,Oncorhynchus mykiss,,,,,,,,"Fresh fillets may have a white , pink or red coloration. The color depends on the feed received trout.",,,,,,,
+13,Bassa; Pangasio,Pangasius hypophthalmus,,,,,,,,"The steaks have a white color , pink or pale yellow.
+ You must not have strong or rancid odors",,,,,,,
+14,Pacific sierra; Macarela,Scomberomorus sierra,,,,,,,,"The color of the meat is pink transparent . When the meat is frozen it becomes brown flavored cod . The skin color is green bronze to greenish blue on the back, silvery white on the bottom of the sides and belly. It presents a series of yellow-brown spots on the sides .
+ The smell is fresh and characteristic of the species. You must not have strong odors.",,,,,,,
+15,Mexican barracuda; Barracuda,Sphyraena ensis,,,,,,The steaks are long and thin and are between 20 and 30 centimeters long.,It is sold in fillets 100 to 200 grams .,"The steak is usually white or gray with a central strip red color, called bloodline. When the steak is not fresh , the line becomes dark . Intramuscular divisions easily appreciated.
+",,,,,,,
+16,Yellowfin Tuna; ahi; Atún aleta amarilla ,Thunnus albacares,Frequently,17; 18; 22; 19,,,,"The thickness of the ridges is between 8 and 15 cm, depending on the size of fish, and medallions are 2 cm thick. ",Each yellowfin tuna loin weighs between 500 g and 3 kg . It is processed into 100-200 g fillets.,"The fresh color is deep red, as it becomes ice freezing or keeping their color becomes dull and brown. This happens because the meat is easily oxidized and chocolate sets. It is usually treated with CO to activate hemoglobin , giving red color and fresh appearance .
+ ","A large, predatory tropical tuna species with bright yellow finlets.Yellowfin can reach weights over 180 kg.",Yellow,75 cm,Worldwide tropical,Wild,,"canned, smoked, fresh"
+17,escolar; snake mackerel,Lepidocybium flavobrunneum,,,,,,,,,,,,,,,
+18,Pacific bluefin tuna,Thunnus orientalis,,,,,,,,,,,,,,,
+19,bigeye tuna,Thunnus obesus,,,,,,,,,,,,,,,
+20,Yellowtail,Seriola lalandei,,,,,,,,,,,,,,,
+21,Pompano dolphinfish,Coryphaena equiselis,,,,,,,,,,,,,,,
+22,skipjack tuna,Katsuwonus pelamis,,,,,,,,,,,,,,,
