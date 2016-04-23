@@ -17,8 +17,10 @@ def get_fish(fish_id):
 
 @app.route("/fish", methods = ["POST"])
 def post_fish():
+    print( "POST fish")
     submitted_data = request.get_json(True)
     for fish in submitted_data:
-        print (r.set("fish:"+fish["id"], json.dumps(fish)))
+        print (str(fish))
+        print (r.set("fish:"+fish["ID"], json.dumps(fish)))
     return "true"
     
