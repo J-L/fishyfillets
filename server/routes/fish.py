@@ -3,8 +3,8 @@ from server import *
 
 
 def get_fish():
-    print ("get_fish")
-    fish_id = request.url.split("/")[-1]
+    fish_id = str(request.url.split("/")[-1])
+    print ("fish/"+fish_id)
     for elem in r.keys():
         if search_string in elem:
             return r.get("fish:"+fish_id)
