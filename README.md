@@ -38,13 +38,21 @@ Search against known fish species and distributors
 
 @Return SearchResult
 
-## GET /fish
+## GET /fish/:id
 
 Retrieve details about a fish
 
-@QueryParam species
+@PathParam id
 
 @Return Fish
+
+## GET /distributor/:id
+
+Retrieve details about a distributor
+
+@PathParm id
+
+@Return Distributor
 
 ## POST /report
 
