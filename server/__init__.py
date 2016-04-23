@@ -1,9 +1,12 @@
 import sys, os, platform,json,datetime,logging
 from flask import Flask,request
 from threading import Thread
+from flask.ext.script import Shell
+from flask.ext.script import Manager
 from flask.ext.sqlalchemy import SQLAlchemy
 import requests
-
+import redis
+r = redis.StrictRedis(host='localhost', port=6379, db=0)
 app= Flask(__name__)
 
 
@@ -52,5 +55,6 @@ def send_email_message(to,sender, subject, message):
 
 import server.routes.test_point
 import server.routes.insert_fish
+import server.routes.get_fish
 import server.routes.search
 import server.routes.get_reports
