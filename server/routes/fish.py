@@ -1,26 +1,24 @@
 from server import *
 
 
+@app.route("/fish/<path>", methods = ["GET"])
+def get_fish(path):
+    print("GET fish")
+    try:
+        fish_id = "fish:"+str(path.split("/")[-1])
+        for elem in r.keys():
+            if fish_id == elem:
+                print (r.get(fish_id))
+        return "null"
+    except Exception as e:
+        print(e)
 
-def get_fish():
-    fish_id = str(request.url.split("/")[-1])
-    print ("fish/"+fish_id)
-    for elem in r.keys():
-        if search_string in elem:
-            return r.get("fish:"+fish_id)
 
 
+@app.route("/fish", methods = ["POST"])
 def post_fish():
     submitted_data = request.get_json(True)
     for fish in submitted_data:
         print (r.set("fish:"+fish["name"], json.dumps(fish)))
     return "true"
     
-
-
-@app.route("/fish")
-def fish():
-    if request.method == 'POST':
-        get_fish()
-    else:
-        post_fish()
