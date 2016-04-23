@@ -12,7 +12,6 @@ class Fish extends React.Component {
 
         this.state = {
             fish: null,
-            confusedFishes: [],
             error: null
         };
     }
@@ -20,8 +19,7 @@ class Fish extends React.Component {
     componentDidMount() {
         client.getFish(this.props.params.id, (resp) => {
             this.setState({
-                fish: resp.fish,
-                confusedFishes: resp.confusedFishes
+                fish: resp
             });
         });
     }
@@ -47,18 +45,18 @@ class Fish extends React.Component {
 
                 <h2>Commonly Mislabeled As {this.state.fish.name}</h2>
 
-                {this._renderConfusedFishes()}
+                {this._renderConfusedFishes(this.state.fish.confusedFishes)}
             </div>
         )
     }
 
-    _renderConfusedFishes() {
+    _renderConfusedFishes(confusedFishes) {
         console.log('fish._renderConfusedFishes', this.state);
-        if (!this.state.confusedFishes || this.state.confusedFishes.length == 0) {
+        if (!confusedFishes || confusedFishes.length == 0) {
             return <span>No Results</span>
         }
 
-        return this.state.confusedFishes.map((fish, idx) => {
+        return confusedFishes.map((fish, idx) => {
            return (
                <Link to={`/fish/${this.state.fish.id}/compare/${fish.id}`} key={idx} className="confusedFish">
                    <span>{fish.name}</span>
