@@ -2,21 +2,55 @@
  * Created by shu on 2016-04-22.
  */
 import React from 'react';
-import SearchBar from 'react-search-bar';
+
+const minCharsBeforeAutoComplete = 2;
 
 class Search extends React.Component {
+
+    constructor() {
+        super();
+        this.state = {
+            value: '',
+            suggestions: []
+        };
+    }
+
+    normalizeInput() {
+        return this.state.value.toLowerCase().trim();
+    }
+
+    onChange(e) {
+        clearTimeout(this._timerId);
+        this.setState({value: e.target.value});
+
+        let searchTerm = this.normalizeInput();
+        if (!searchTerm || searchTerm.length < minCharsBeforeAutoComplete) return;
+
+        this._timerId = setTimeout(() => this._updateSuggestions(searchTerm));
+    }
+
+    _updateSuggestions(searchTerm) {
+        let suggestions = [];
+        fetch('/search?term=' + searchTerm).then((response) => {
+            response.json().then((json) => {
+                json.matchedFishes.forEach(function(fish) {
+                    suggestions.push(
+                        <div key={fish.id}>{fish.id}, {fish.name}</div>
+                    );
+                });
+                this.setState({suggestions: suggestions});
+            });
+        });
+    }
 
     render() {
         return (
             <div>
-                <h3>Look up a fish or a distributor/seller</h3>
-                <SearchBar
-                    autoFocus={true}
-                    debounceDelay={1000}
-                    placeholder="ex. Yellowfin Tuna"
-                    onChange={(input, resolve) => {
-                        // get suggestions based on `input`, then pass them to `resolve()`
-                    }} />
+                <input type="text"
+                       placeholder="Yellowfin Tuna"
+                       onChange={this.onChange.bind(this)}
+                       value={this.state.value}/>
+                {!!this.state.suggestions && this.state.suggestions}
             </div>
         )
     }
