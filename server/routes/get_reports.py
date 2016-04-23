@@ -19,16 +19,16 @@ def get_reports():
             keys_to_intersect.append(mislabeled_species_key)
         if mislabeledAs is not None:
             keys_to_intersect.append(mislabeled_as_key)
-        print "sinter"
+        print ("sinter")
         data = []
-        print "keys:"+str(keys_to_intersect)
+        print ("keys:"+str(keys_to_intersect))
         redis_sinter = r.sinter(keys_to_intersect)
         for elem in redis_sinter:
-            print elem
+            print (elem)
             data.append(elem)
         return json.dumps(data)
     except Exception as e:
-        print e
+        print (e)
 
 
 
