@@ -2,7 +2,8 @@
 
 ```
 Fish: {
-	species: string
+        id: string
+	name: string
 	mislabelRate: double
 	commonlyMislabeledOn: Fish[]
 	imageLinks: string[]
@@ -22,8 +23,8 @@ Reports: {
 }
 
 SearchResult: {
-	matchedFishes: Fish[]
-	matchedDistributors: [{distributor: Distributor, reports: Reports}]
+	matchedFishes: [{id: string, name: string}]
+	matchedDistributors: [{id: string, name: string}]
 }
 ```
 
@@ -54,3 +55,12 @@ Create a report
 @QueryParam mislabeledSpecies
 
 @QueryParam mislabeledAs
+
+# Dev Setup
+
+```
+python3 application.py
+cd server/static
+npm install
+npm start
+```
