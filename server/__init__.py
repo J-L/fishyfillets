@@ -43,14 +43,6 @@ def redirect_http(func):
             return redirect(request.url.replace("http://", "https://"))
         return func(*args, **kws)
     return decorated_function
-def send_email_message(to,sender, subject, message):
-    return requests.post(
-        "https://api.mailgun.net/v3/sqwk.ca",
-        auth=("api", "key-cca9ecbd1bdc183a75788abadb2feadc"),
-        data={"from": sender+" <messenger@sqwk.ca",
-              "to": [to],
-              "subject": subject,
-              "text": message})
 
 
 import server.routes.test_point
@@ -58,3 +50,6 @@ import server.routes.insert_fish
 import server.routes.get_fish
 import server.routes.search
 import server.routes.get_reports
+import server.routes.insert_report
+import server.routes.get_distributor
+import server.routes.insert_distributor

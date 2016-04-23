@@ -7,7 +7,6 @@ def search():
     if search_string is None:
         return "error" , 403
     else:
-
         mock_data = {
             "matchedFishes":[
                 {
@@ -39,4 +38,9 @@ def search():
             ]
         }
         return json.dumps(mock_data)
-        fish = dbdefs.fish.query.filter(dbdefs.fish.contains(search_string))
+        #now the real call
+        data = []
+        for elem in r.keys():
+            if search_string in elem:
+                data.append( json.loads(r.get("fish:"+search_string)))
+        return json.dumps(data)
