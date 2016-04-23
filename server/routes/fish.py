@@ -1,17 +1,11 @@
 from server import *
 
 
-@app.route("/fish/<path>", methods = ["GET"])
-def get_fish(path):
-    print("GET fish")
-    try:
-        fish_id = "fish:"+str(path.split("/")[-1])
-        for elem in r.keys():
-            if fish_id == elem:
-                print (r.get(fish_id))
-        return "null"
-    except Exception as e:
-        print(e)
+@app.route("/fish/<id>", methods = ["GET"])
+def get_fish(id):
+    print("GET fish: " + id);
+    fish = r.get(id);
+    return fish;
 
 
 
