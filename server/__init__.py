@@ -50,5 +50,4 @@ import server.routes.fish
 import server.routes.search
 import server.routes.get_reports
 import server.routes.insert_report
-import server.routes.get_distributor
-import server.routes.insert_distributor
+import server.routes.distributor

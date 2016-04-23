@@ -5,7 +5,7 @@ from server import *
 def get_fish(fish_id):
     try:
         print("GET fish: " + fish_id);
-        fish = r.get(fish_id)
+        fish = r.get("fish:"+str(fish_id))
         if fish is not None:
             return fish
         else:
