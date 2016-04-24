@@ -15,7 +15,7 @@ render((
         <Route path="/" component={Search}/>
         <Route path="/fish/:id" component={Fish}/>
         <Route path="/fish/:fish1/compare/:fish2" component={Compare}/>
-        <Route path="/report" component={Report}/>
+        <Route name='report' path="/report/:fish1/:fish2" component={Report}/>
     </Router>
 ), document.getElementById('container'));
 

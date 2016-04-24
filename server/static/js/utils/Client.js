@@ -42,6 +42,11 @@ class MockClient {
         let response;
         cb(fishes.find(function(fish) {return fish.id == id}));
     }
+
+    createReport(data, cb) {
+        console.log('posting: ', data);
+        cb();
+    }
 }
 
 class Client {

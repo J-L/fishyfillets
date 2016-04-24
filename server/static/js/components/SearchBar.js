@@ -13,15 +13,11 @@ class SearchBar extends React.Component {
         };
     }
 
-    normalizeInput() {
-        return this.state.value.toLowerCase().trim();
-    }
-
     onChange(e) {
         clearTimeout(this._timerId);
         this.setState({value: e.target.value});
 
-        let searchTerm = this.normalizeInput();
+        let searchTerm = e.target.value.toLowerCase().trim();
         if (!searchTerm || searchTerm.length < this.props.minCharsBeforeAutoComplete) return;
 
         this._timerId = setTimeout(() => this.props.autoComplete(searchTerm, (suggestions) => {

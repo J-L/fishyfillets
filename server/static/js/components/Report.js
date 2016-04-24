@@ -11,16 +11,24 @@ class Report extends React.Component {
     constructor() {
         super();
         this.state = {
-            distributor: null
+            distributor: null,
+            details: ''
         }
     }
 
     onClick() {
-        this.props.history.push('/static/index.html#/distributors');
+        if (!this.state.distributor) {
+            window.alert('Please fill in distributor info.');
+        }
+        client.createReport({
+            distributorId: this.state.distributor.id,
+            soldAs: this.props.params.fish1,
+            mislabeledFish: this.props.params.fish2,
+            details: this.state.details
+        }, () => this.props.history.push('/static/index.html#/distributors'));
     }
 
     onSelectDistributor(distributor) {
-        console.log('distributor selected', distributor);
         this.setState({distributor: distributor});
     }
 
@@ -45,6 +53,10 @@ class Report extends React.Component {
         });
     }
 
+    onDetailsUpdate(e) {
+        this.setState({details: e.target.value});
+    }
+
     render() {
         return (
             <div>
@@ -53,7 +65,7 @@ class Report extends React.Component {
                     ? <div onClick={() => this.setState({distributor: null})} className="name">{this.state.distributor.name}</div>
                     : <SearchBar placeholder="Sunshine Distributors" autoComplete={this.autoComplete.bind(this)} />}
                 <label>Additional Details</label>
-                <input/>
+                <input type="text" onChange={this.onDetailsUpdate.bind(this)} value={this.state.details} />
                 <button onClick={this.onClick.bind(this)}>Submit</button>
             </div>
         )

@@ -53,7 +53,7 @@ class Compare extends React.Component {
                 </div>
 
                 <h1>Suspect Something?</h1>
-                <Link to={`/report`}>
+                <Link to={"/report/" + this.state.fish1.id + "/" + this.state.fish2.id} >
                     <div>Report</div>
                 </Link>
             </div>);
