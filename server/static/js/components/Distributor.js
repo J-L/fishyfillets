@@ -35,7 +35,15 @@ class Distributor extends React.Component {
         }
         return (
             <div>
-                <h1>{this.state.distributor.name}</h1>
+                <h1 className="text-center">{this.state.distributor.name}</h1>
+                <h2 className="text-center">{this.state.distributor.product}</h2>
+                <hr style={{'margin-top': '50px'}} />
+                <div style={{'margin-top': '50px'}}>
+                    {this.state.distributor.location && <div>Location: {this.state.distributor.location}</div>}
+                    {this.state.distributor.email && <div>Email: {this.state.distributor.email}</div>}
+                    {this.state.distributor.phone && <div>Phone: {this.state.distributor.phone}</div>}
+                </div>
+                <hr style={{'margin-top': '50px'}} />
             </div>
         )
     }

@@ -27,13 +27,22 @@ const fishes = [
     }
 ];
 
+const distributor = {
+    id: 1,
+    name: 'Yellow Sunshine Fish Sellers',
+    product: 'SHRIMP FARMING',
+    location: 'HOMELESS, SAN JOSE',
+    email: "info@ysfs.com",
+    phone: "2293-7408"
+}
+
 class MockClient {
 
     search(term, cb) {
         cb({
             matchedFishes: fishes,
             matchedDistributors: [
-                { id: 1, name: 'Yellow Sunshine Fish Sellers'}
+                distributor
             ]
         });
     }
@@ -49,7 +58,7 @@ class MockClient {
     }
 
     getDistributor(id, cb) {
-        cb({ id: id, name: 'Yellow Sunshine Fish Sellers'});
+        cb(distributor);
     }
 
     getReports(id, cb) {
