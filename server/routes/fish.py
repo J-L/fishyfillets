@@ -4,7 +4,7 @@ from server import *
 @app.route("/fish/<fish_id>", methods = ["GET"])
 def get_fish(fish_id):
     try:
-        print("GET fish: " + fish_id);
+        #print("GET fish: " + fish_id);
         fish = r.get("fish:"+str(fish_id))
         if fish is not None:
             json_fish = json.loads(fish.decode('utf-8'))
@@ -12,7 +12,7 @@ def get_fish(fish_id):
             array_of_confushed_fish_ids = str(json_fish["confusedSpecies"]).split(";")
             for confused_fish_id in array_of_confushed_fish_ids:
                 try:
-                    print ("fish:"+str(int(confused_fish_id)))
+                    #print ("fish:"+str(int(confused_fish_id)))
                     confused_fish = r.get("fish:"+str(int(confused_fish_id)))
                     json_fish["confusedFishes"].append(json.loads(confused_fish.decode('utf-8')))
                 except:
@@ -22,7 +22,8 @@ def get_fish(fish_id):
         else:
             return ""
     except Exception as e:
-        print(e)
+        pass
+        #print(e)
 
 
 

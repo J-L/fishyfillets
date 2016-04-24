@@ -83,10 +83,10 @@ class Compare extends React.Component {
 
                 <div className="row">
                     <div className="col-xs-6">
-                        <h2 className="text-center">{this.state.fish1.value}</h2>
+                        <h2 className="text-center">{this.state.fish1.value + ' Colón'}</h2>
                     </div>
                     <div className="col-xs-6">
-                        <h2 className="text-center">{this.state.fish2.value}</h2>
+                        <h2 className="text-center">{this.state.fish2.value + ' Colón'}</h2>
                     </div>
                 </div>
 

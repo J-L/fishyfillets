@@ -8,4 +8,7 @@ from server import app
 application = app
 
 if __name__ == "__main__":
-    application.run()
+	http_server = HTTPServer(WSGIContainer(app))
+	http_server.listen(5000)
+	IOLoop.instance().start()
+
