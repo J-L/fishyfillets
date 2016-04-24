@@ -8,6 +8,7 @@ import Search from './components/Search';
 import Fish from './components/Fish';
 import Compare from './components/Compare';
 import Report from './components/Report';
+import Distributor from './components/Distributor';
 
 import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router'
 
@@ -16,7 +17,8 @@ render((
         <Route path="/" component={Search}/>
         <Route path="/fish/:id" component={Fish}/>
         <Route path="/fish/:fish1/compare/:fish2" component={Compare}/>
-        <Route name='report' path="/report/:fish1/:fish2" component={Report}/>
+        <Route path="/report/:fish1/:fish2" component={Report}/>
+        <Route path="/distributors/:id" component={Distributor}/>
     </Router>
 ), document.getElementById('container'));
 
