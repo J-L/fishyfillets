@@ -25,7 +25,7 @@ class Report extends React.Component {
             soldAs: this.props.params.fish1,
             mislabeledFish: this.props.params.fish2,
             details: this.state.details
-        }, () => this.props.history.push('/static/index.html#/distributors'));
+        }, () => this.props.history.push('/static/index.html#/distributors/' + this.state.distributor.id));
     }
 
     onSelectDistributor(distributor) {

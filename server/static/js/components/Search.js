@@ -22,7 +22,7 @@ class Search extends React.Component {
 
             json.matchedDistributors.forEach(function(distributor) {
                 suggestions.push(
-                    <Link className="searchResult" key={'d_' + distributor.id} to={`/distributor/${distributor.id}`}>
+                    <Link className="searchResult" key={'d_' + distributor.id} to={`/distributors/${distributor.id}`}>
                         <span className="name">{distributor.name}</span>
                         <span className="type">Distributor</span>
                     </Link>

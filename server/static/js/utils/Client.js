@@ -47,6 +47,14 @@ class MockClient {
         console.log('posting: ', data);
         cb();
     }
+
+    getDistributor(id, cb) {
+        cb({ id: id, name: 'Yellow Sunshine Fish Sellers'});
+    }
+
+    getReports(id, cb) {
+        cb();
+    }
 }
 
 class Client {
