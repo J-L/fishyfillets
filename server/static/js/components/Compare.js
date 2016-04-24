@@ -38,22 +38,62 @@ class Compare extends React.Component {
 
         return (
             <div>
-                <h1>Compare Fishes</h1>
                 <div className="row">
                     <div className="col-xs-6">
-                        <h3>{this.state.fish1.name}</h3>
-                        <div className="imageContainer"><img  src={this.state.fish1.thumbnail} /></div>
-                        <div>{this.state.fish1.description}</div>
+                        <h1 className="text-center">{this.state.fish1.name}</h1>
                     </div>
                     <div className="col-xs-6">
-                        <h3>{this.state.fish2.name}</h3>
-                        <img src={this.state.fish2.thumbnail} />
-                        <div>{this.state.fish2.description}</div>
+                        <h1 className="text-center">{this.state.fish2.name}</h1>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-xs-6">
+                        <img style={{'width': '100%'}} src={this.state.fish1.thumbnail} />
+                    </div>
+                    <div className="col-xs-6">
+                        <img style={{'width': '100%'}} src={this.state.fish2.thumbnail} />
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-xs-6">
+                        <h2 className="text-center">{this.state.fish1.colour}</h2>
+                    </div>
+                    <div className="col-xs-6">
+                        <h2 className="text-center">{this.state.fish2.colour}</h2>
                     </div>
                 </div>
 
-                <h1>Suspect Something?</h1>
-                <Link className="reportLink" to={"/report/" + this.state.fish1.id + "/" + this.state.fish2.id} >
+                <div className="row">
+                    <div className="col-xs-6">
+                        <h2 className="text-center">{this.state.fish1.filletLength}</h2>
+                    </div>
+                    <div className="col-xs-6">
+                        <h2 className="text-center">{this.state.fish2.filletLength}</h2>
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-xs-6">
+                        <h2 className="text-center">{this.state.fish1.filletWeight}</h2>
+                    </div>
+                    <div className="col-xs-6">
+                        <h2 className="text-center">{this.state.fish2.filletWeight}</h2>
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-xs-6">
+                        <h2 className="text-center">{this.state.fish1.value}</h2>
+                    </div>
+                    <div className="col-xs-6">
+                        <h2 className="text-center">{this.state.fish2.value}</h2>
+                    </div>
+                </div>
+
+                <hr style={{'marginTop': '50px'}} />
+
+                <h1 className="text-center">Suspect Something?</h1>
+                <Link className="reportLink text-center" to={"/report/" + this.state.fish1.id + "/" + this.state.fish2.id} >
                     <div>Report</div>
                 </Link>
             </div>);
