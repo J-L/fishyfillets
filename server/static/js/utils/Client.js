@@ -17,8 +17,15 @@ const fishes = [
                 id: 3,
                 name: 'Bluefin Tuna'
             }
-        ]
-    }, {
+        ],
+        value: 11465,
+        sustainability: 'Red',
+        aliases: 'ahi; Atún aleta amarilla',
+        recommendedConsumptionSize: '45.0 cm LT',
+        fishLength: 'L; 8-15 cm; 5 cm',
+        weight: '100-200g',
+        colour: 'Fresh: deep red. Frozen: dull brown.'
+}, {
         id: "2",
         name: 'Yellowtail',
         mislabelFrequency: 'Infrequent',
@@ -27,13 +34,36 @@ const fishes = [
     }
 ];
 
+const distributor = {
+    id: 1,
+    name: 'Yellow Sunshine Fish Sellers',
+    product: 'SHRIMP FARMING',
+    location: 'HOMELESS, SAN JOSE',
+    email: "info@ysfs.com",
+    phone: "2293-7408"
+};
+
+const reports = [{
+    distributorId: 1,
+    soldAs: "1",
+    mislabeledFish: "2",
+    details: "Total BS!",
+    createdAt: 1461475739812
+},{
+    distributorId: 1,
+    soldAs: "1",
+    mislabeledFish: "2",
+    details: "Rip off!",
+    createdAt: 1461015739812
+}];
+
 class MockClient {
 
     search(term, cb) {
         cb({
             matchedFishes: fishes,
             matchedDistributors: [
-                { id: 1, name: 'Yellow Sunshine Fish Sellers'}
+                distributor
             ]
         });
     }
@@ -49,11 +79,11 @@ class MockClient {
     }
 
     getDistributor(id, cb) {
-        cb({ id: id, name: 'Yellow Sunshine Fish Sellers'});
+        cb(distributor);
     }
 
     getReports(id, cb) {
-        cb();
+        cb(reports);
     }
 }
 
