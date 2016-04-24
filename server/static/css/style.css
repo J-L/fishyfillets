@@ -60,6 +60,10 @@ input:focus {
     background-color: #fff;
 }
 
+.glyphicon-link {
+    margin-left: 10px;
+}
+
 .confusedFish {
     display: block;
     width: 400px;

@@ -34,7 +34,21 @@ const distributor = {
     location: 'HOMELESS, SAN JOSE',
     email: "info@ysfs.com",
     phone: "2293-7408"
-}
+};
+
+const reports = [{
+    distributorId: 1,
+    soldAs: "1",
+    mislabeledFish: "2",
+    details: "Total BS!",
+    createdAt: 1461475739812
+},{
+    distributorId: 1,
+    soldAs: "1",
+    mislabeledFish: "2",
+    details: "Rip off!",
+    createdAt: 1461015739812
+}];
 
 class MockClient {
 
@@ -62,7 +76,7 @@ class MockClient {
     }
 
     getReports(id, cb) {
-        cb();
+        cb(reports);
     }
 }
 
