@@ -45,7 +45,7 @@ class Search extends React.Component {
         return (
             <div>
                 <h1>Look up fish or distributors/sellers</h1>
-                <SearchBar autoComplete={this.autoComplete.bind(this)} />
+                <SearchBar placeholder="Yellowfin Tuna" autoComplete={this.autoComplete.bind(this)} />
             </div>
         )
     }

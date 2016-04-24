@@ -34,7 +34,7 @@ class SearchBar extends React.Component {
             <div>
                 <input className="searchInput"
                        type="text"
-                       placeholder="Yellowfin Tuna"
+                       placeholder={this.props.placeholder}
                        onChange={this.onChange.bind(this)}
                        value={this.state.value}/>
                 {!!this.state.suggestions && this.state.suggestions}
@@ -43,12 +43,14 @@ class SearchBar extends React.Component {
 }
 
 SearchBar.propTypes = {
+    placeholder: React.PropTypes.string,
     minCharsBeforeAutoComplete: React.PropTypes.number,
     autoComplete: React.PropTypes.func.isRequired
 };
 
 SearchBar.defaultProps = {
-    minCharsBeforeAutoComplete: 3
+    minCharsBeforeAutoComplete: 3,
+    placeholder: ''
 };
 
 export default SearchBar;
