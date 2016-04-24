@@ -17,8 +17,15 @@ const fishes = [
                 id: 3,
                 name: 'Bluefin Tuna'
             }
-        ]
-    }, {
+        ],
+        value: 11465,
+        sustainability: 'Red',
+        aliases: 'ahi; Atún aleta amarilla',
+        recommendedConsumptionSize: '45.0 cm LT',
+        fishLength: 'L; 8-15 cm; 5 cm',
+        weight: '100-200g',
+        colour: 'Fresh: deep red. Frozen: dull brown.'
+}, {
         id: "2",
         name: 'Yellowtail',
         mislabelFrequency: 'Infrequent',
