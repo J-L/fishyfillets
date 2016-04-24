@@ -2,7 +2,7 @@ from server import *
 
 
 
-@app.route('/insert_report',methods = ['POST'])
+@app.route('/report',methods = ['POST'])
 def insert_report():
     submitted_data = request.get_json(True)
     distributorId = submitted_data["distributorId"]
