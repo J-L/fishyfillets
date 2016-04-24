@@ -4,34 +4,11 @@
 import React from 'react';
 import { Link } from 'react-router';
 import client from '../utils/Client';
-
-const minCharsBeforeAutoComplete = 2;
+import SearchBar from './SearchBar';
 
 class Search extends React.Component {
 
-    constructor() {
-        super();
-        this.state = {
-            value: '',
-            suggestions: []
-        };
-    }
-
-    normalizeInput() {
-        return this.state.value.toLowerCase().trim();
-    }
-
-    onChange(e) {
-        clearTimeout(this._timerId);
-        this.setState({value: e.target.value});
-
-        let searchTerm = this.normalizeInput();
-        if (!searchTerm || searchTerm.length < minCharsBeforeAutoComplete) return;
-
-        this._timerId = setTimeout(() => this._updateSuggestions(searchTerm));
-    }
-
-    _updateSuggestions(searchTerm) {
+    autoComplete(searchTerm, cb) {
         let suggestions = [];
         client.search(searchTerm, (json) => {
             json.matchedFishes.forEach(function(fish) {
@@ -60,19 +37,15 @@ class Search extends React.Component {
                 );
             }
 
-            this.setState({suggestions: suggestions});
+            cb(suggestions);
         });
     }
 
     render() {
         return (
             <div>
-                <input className="searchInput"
-                       type="text"
-                       placeholder="Yellowfin Tuna"
-                       onChange={this.onChange.bind(this)}
-                       value={this.state.value}/>
-                {!!this.state.suggestions && this.state.suggestions}
+                <h1>Look up fish or distributors/sellers</h1>
+                <SearchBar autoComplete={this.autoComplete.bind(this)} />
             </div>
         )
     }
