@@ -18,7 +18,6 @@ class Fish extends React.Component {
     }
 
     componentDidMount() {
-        console.log('fuck', this);
         client.getFish(this.props.params.id, (resp) => {
             this.setState({
                 fish: resp
@@ -27,9 +26,13 @@ class Fish extends React.Component {
     }
 
     _renderSustainability(sustainability) {
-        //if (sustainability == "Red") {
+        if (sustainability == "Red") {
             return <span className="glyphicon glyphicon-exclamation-sign" style={{'color': 'red'}} />
-        //}
+        } else if (sustainability == "Yellow") {
+            return <span className="glyphicon glyphicon-remove-circle" style={{'color': '#DAA520'}} />
+        } else {
+            return <span className="glyphicon glyphicon-ok-circle" style={{'color': 'green'}} />
+        }
     }
 
     render() {
