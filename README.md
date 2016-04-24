@@ -67,8 +67,11 @@ Create a report
 # Dev Setup
 
 ```
-python3 application.py
-cd server/static
-npm install
-npm start
+pip install -r /path/to/requirements.txt
+cd scripts
+python ./data_loader.py
+cd ..
+python application.py
+
 ```
+Entry point for app is `static/index.html`
