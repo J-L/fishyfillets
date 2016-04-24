@@ -1,3 +1,13 @@
+body{
+	background-color: #FF5267 !important;
+	padding-top: 200px;
+	color:#f2f2f2 !important;
+	font-size:36pt !important;
+}
+h1{
+	font-size:48pt !important;
+}
+
 .searchInput {
     width: 400px;
 }
