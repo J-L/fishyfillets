@@ -6,29 +6,31 @@ const fishes = [
     {
         id: "1",
         name: 'Yellowfin Tuna',
-        mislabelFrequency: 'Frequent',
+        mislabelFrequency: 'Frequently',
         description: 'A large, predatory tropical tuna species with bright yellow finlets.Yellowfin can reach weights over 180 kg.',
         thumbnail: 'http://placekitten.com/150/150',
         confusedFishes: [
             {
                 id: 2,
-                name: 'Yellowtail'
+                name: 'Yellowtail',
+                thumbnail: 'http://placekitten.com/150/150'
             }, {
                 id: 3,
-                name: 'Bluefin Tuna'
+                name: 'Bluefin Tuna',
+                thumbnail: 'http://placekitten.com/150/150'
             }
         ],
         value: 11465,
         sustainability: 'Red',
         aliases: 'ahi; Atún aleta amarilla',
         recommendedConsumptionSize: '45.0 cm LT',
-        fishLength: 'L; 8-15 cm; 5 cm',
-        weight: '100-200g',
+        filletLength: 'L; 8-15 cm; 5 cm',
+        filletWeight: '100-200g',
         colour: 'Fresh: deep red. Frozen: dull brown.'
 }, {
         id: "2",
         name: 'Yellowtail',
-        mislabelFrequency: 'Infrequent',
+        mislabelFrequency: 'Rarely',
         description: 'Hi, my tail is yellow',
         thumbnail: 'http://placekitten.com/150/150'
     }
