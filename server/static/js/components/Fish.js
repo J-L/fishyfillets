@@ -38,14 +38,18 @@ class Fish extends React.Component {
 
         return (
             <div>
+                <br/>
+                <center><img  src="/static/img/preview/pngs/Kajikia audax.png" height="400"/></center>
+                <br/>
                 <h1>{this.state.fish.name}</h1>
                 <h3>{this.state.fish.mislabelFrequency} Mislabeled</h3>
                 <span>{this.state.fish.description}</span>
                 <hr />
 
                 <h2>Commonly Mislabeled As {this.state.fish.name}</h2>
-
+                <div className="row">
                 {this._renderConfusedFishes(this.state.fish.confusedFishes)}
+                </div>
             </div>
         )
     }
@@ -58,9 +62,16 @@ class Fish extends React.Component {
 
         return confusedFishes.map((fish, idx) => {
            return (
+
+            <div className="col-xs-6">
+                <center>
+                <img src="/static/img/preview/pngs/Kajikia audax.png" height="200"/>
                <Link to={`/fish/${this.state.fish.id}/compare/${fish.id}`} key={idx} className="confusedFish">
                    <span>{fish.name}</span>
                </Link>
+               </center>
+
+            </div>
            )
         });
     }
