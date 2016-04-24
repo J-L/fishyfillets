@@ -6,6 +6,7 @@ import { render } from 'react-dom';
 import Search from './components/Search';
 import Fish from './components/Fish';
 import Compare from './components/Compare';
+import Report from './components/Report';
 
 import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router'
 
@@ -14,6 +15,7 @@ render((
         <Route path="/" component={Search}/>
         <Route path="/fish/:id" component={Fish}/>
         <Route path="/fish/:fish1/compare/:fish2" component={Compare}/>
+        <Route path="/report" component={Report}/>
     </Router>
 ), document.getElementById('container'));
 

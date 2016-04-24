@@ -32,7 +32,6 @@ class Compare extends React.Component {
     }
 
     render() {
-        console.log('Compare.render', this.state);
         if (!this.state.fish1 || !this.state.fish2) {
             return <h1>Loading ...</h1>
         }
@@ -40,16 +39,23 @@ class Compare extends React.Component {
         return (
             <div>
                 <h1>Compare Fishes</h1>
-                <div className="col-xs-6">
-                    <h3>{this.state.fish1.name}</h3>
-                    <img src={this.state.fish1.thumbnail} />
-                    <div>{this.state.fish1.description}</div>
+                <div className="row">
+                    <div className="col-xs-6">
+                        <h3>{this.state.fish1.name}</h3>
+                        <img src={this.state.fish1.thumbnail} />
+                        <div>{this.state.fish1.description}</div>
+                    </div>
+                    <div className="col-xs-6">
+                        <h3>{this.state.fish2.name}</h3>
+                        <img src={this.state.fish2.thumbnail} />
+                        <div>{this.state.fish2.description}</div>
+                    </div>
                 </div>
-                <div className="col-xs-6">
-                    <h3>{this.state.fish2.name}</h3>
-                    <img src={this.state.fish2.thumbnail} />
-                    <div>{this.state.fish2.description}</div>
-                </div>
+
+                <h1>Suspect Something?</h1>
+                <Link to={`/report`}>
+                    <div>Report</div>
+                </Link>
             </div>);
     }
 
