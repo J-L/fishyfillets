@@ -14,8 +14,8 @@ class Search extends React.Component {
             json.matchedFishes.forEach(function(fish) {
                 suggestions.push(
                     <Link className="searchResult" key={'f_' + fish.id} to={`/fish/${fish.id}`}>
+                        <img className="icon" src="img/fish.png" />
                         <span className="name">{fish.name}</span>
-                        <span className="type">Fish</span>
                     </Link>
                 );
             });
@@ -23,8 +23,8 @@ class Search extends React.Component {
             json.matchedDistributors.forEach(function(distributor) {
                 suggestions.push(
                     <Link className="searchResult" key={'d_' + distributor.id} to={`/distributors/${distributor.id}`}>
+                        <img className="icon" src="img/distributor.png" />
                         <span className="name">{distributor.name}</span>
-                        <span className="type">Distributor</span>
                     </Link>
                 );
             });
