@@ -19,7 +19,7 @@ def get_distributor(distributor_id):
 def post_distributor():
     submitted_data = request.get_json(True)
     for distributor in submitted_data:
-        distributorId = distributor["ID"]
+        distributorId = distributor["id"]
         print (str(distributor))
         print (r.set("distributor:"+distributorId, distributor))
     return "true"

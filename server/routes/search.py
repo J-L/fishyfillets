@@ -3,44 +3,35 @@ from server import *
 
 @app.route('/search')
 def search():
-    search_string = request.args.get('term')
+    search_string = request.args.get('term').lower()
     if search_string is None:
         return "error" , 403
     else:
-        mock_data = {
-            "matchedFishes":[
-                {
-                    "id": 1,
-                    "name": "Bluefin Tuna"
-                },
-                            {
-                    "id": 2,
-                    "name": "Salmon"
-                },
-                            {
-                    "id": 3,
-                    "name": "Trout"
-                },
-            ],
-            "matchedDistributors":[
-                {
-                    "id": 1,
-                    "name": "Salmon and Co"
-                },
-                            {
-                    "id": 2,
-                    "name": "Sea Treasures"
-                },
-                            {
-                    "id": 3,
-                    "name": "Fishy Fillets"
-                },
-            ]
-        }
-        return json.dumps(mock_data)
-        #now the real call
-        data = []
-        for elem in r.keys():
-            if search_string in elem:
-                data.append( json.loads(r.get("fish:"+search_string)))
-        return json.dumps(data)
+        try:
+            #now the real call
+            matchedFishes = []
+            matchedDistributors = []
+            for key in r.keys():
+                try:
+                    if "fish" in key:
+                        string_value = r.get(key).decode("utf-8").replace("'", '"')
+                        json_obj = json.loads(string_value)
+                        name = string_value.lower()
+                        if search_string in json_obj["name"].lower():
+                            matchedFishes.append(json_obj)
+                    elif "distributor" in key:
+                        string_value = r.get(key).decode("utf-8").replace("'", '"')
+                        json_obj = json.loads(string_value)
+                        name = string_value.lower()
+                        if search_string in json_obj["name"].lower():
+                            matchedDistributors.append(json_obj)
+                except:
+                    pass
+            ret_obj = {
+                "matchedDistributors" : matchedDistributors,
+                "matchedFishes":matchedFishes
+            }
+            return json.dumps(ret_obj)
+        except Exception as e:
+            print "Exception"
+            print(e)

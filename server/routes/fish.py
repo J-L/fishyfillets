@@ -8,12 +8,15 @@ def get_fish(fish_id):
         fish = r.get("fish:"+str(fish_id))
         if fish is not None:
             json_fish = json.loads(fish.decode('utf-8'))
-            json_fish["ConfusedFishes"] = []
-            array_of_confushed_fish_ids = str(json_fish["ConfusedSpecies"]).split(";")
+            json_fish["confusedFishes"] = []
+            array_of_confushed_fish_ids = str(json_fish["confusedSpecies"]).split(";")
             for confused_fish_id in array_of_confushed_fish_ids:
-                print ("fish:"+str(int(confused_fish_id)))
-                confused_fish = r.get("fish:"+str(int(confused_fish_id)))
-                json_fish["ConfusedFishes"].append(json.loads(confused_fish.decode('utf-8')))
+                try:
+                    print ("fish:"+str(int(confused_fish_id)))
+                    confused_fish = r.get("fish:"+str(int(confused_fish_id)))
+                    json_fish["confusedFishes"].append(json.loads(confused_fish.decode('utf-8')))
+                except:
+                    pass
             return json.dumps(json_fish)
 
         else:
@@ -29,6 +32,6 @@ def post_fish():
     submitted_data = request.get_json(True)
     for fish in submitted_data:
         print (str(fish))
-        print (r.set("fish:"+fish["ID"], json.dumps(fish)))
+        print (r.set("fish:"+fish["id"], json.dumps(fish)))
     return "true"
     

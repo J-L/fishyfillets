@@ -20,6 +20,9 @@ h1{
     border: 3px solid #d9d9d9;
     font-size: 32px;
 }
+.comparePage {
+	font-size:14pt !important;
+}
 
 input:focus {
     outline-width: 0;
@@ -73,10 +76,35 @@ input:focus {
     margin: auto;
 
 }
+img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.icon{
+	height: 60px;
+	width: 60px;
+}
+.compareIcon{
+	height: 24px;
+	width: 24px;
+	margin:8px;
+}
+.headerDivider {
+	 padding-top: 50px;
+     border-left:1px solid #666; 
+     border-right:1px solid #666; 
+     height:600px;
+     position:absolute;
+     top:100px; 
+}
 
 .imageContainer{
-	margin: auto;
-    width: 100%;
+	width:100%;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
@@ -84,4 +112,7 @@ input:focus {
 	padding-top: 20px;
 	margin: auto;
 	height:220px;
+}
+.compareBox{
+	padding: 20px;
 }
