@@ -8,7 +8,7 @@ const fishes = [
         name: 'Yellowfin Tuna',
         mislabelFrequency: 'Frequent',
         description: 'A large, predatory tropical tuna species with bright yellow finlets.Yellowfin can reach weights over 180 kg.',
-        thumbnail: '//placekitten.com/150/150',
+        thumbnail: 'http://placekitten.com/150/150',
         confusedFishes: [
             {
                 id: 2,
@@ -23,7 +23,7 @@ const fishes = [
         name: 'Yellowtail',
         mislabelFrequency: 'Infrequent',
         description: 'Hi, my tail is yellow',
-        thumbnail: '//placekitten.com/150/150'
+        thumbnail: 'http://placekitten.com/150/150'
     }
 ];
 
