@@ -27,12 +27,14 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-            <div>
-                <input className="searchInput"
-                       type="text"
-                       placeholder={this.props.placeholder}
-                       onChange={this.onChange.bind(this)}
-                       value={this.state.value}/>
+            <div className="searchInputContainer">
+                <div className="searchInput">
+                    <input type="text"
+                           placeholder={this.props.placeholder}
+                           onChange={this.onChange.bind(this)}
+                           value={this.state.value}/>
+                    <span className="glyphicon glyphicon-search"/>
+                </div>
                 {!!this.state.suggestions && this.state.suggestions}
             </div>);
     }

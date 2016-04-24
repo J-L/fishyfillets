@@ -1,21 +1,38 @@
 body{
-	background-color: #f9f9f9 !important;
 	font-size:36pt !important;
+    background-color: #fff;
 }
 h1{
 	font-size:48pt !important;
 }
 
 .searchInput {
-    color:#333;
     width: 100%;
+    height: 100px;
+    line-height: 60px;
+    padding: 20px;
+    border: 3px solid #d9d9d9
 }
+
+input:focus {
+    outline-width: 0;
+}
+
+.glyphicon-search {
+    float: right;
+    margin-top: 5px;
+    color: #d9d9d9;
+}
+
 .searchResult {
-	padding-top:48px;
+    height: 100px;
     width: 100%;
     display: block;
-    color:#1A6884;
-    
+    border: 3px solid #d9d9d9;
+    border-top: 0px;
+    color: #333;
+    line-height: 50px;
+    padding: 25px;
 }
 
 .searchResult .type {
