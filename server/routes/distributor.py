@@ -17,10 +17,10 @@ def get_distributor(distributor_id):
 
 @app.route("/distributor", methods = ["POST"])
 def post_distributor():
+    print( "POST distributor")
     submitted_data = request.get_json(True)
-    for distributor in submitted_data:
-        distributorId = distributor["id"]
-        print (str(distributor))
-        print (r.set("distributor:"+distributorId, distributor))
+    for fish in submitted_data:
+        print (str(fish))
+        print (r.set("distributor:"+fish["id"], json.dumps(fish)))
     return "true"
     

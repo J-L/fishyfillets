@@ -4,26 +4,31 @@ from server import *
 
 @app.route('/report',methods = ['POST'])
 def insert_report():
-    submitted_data = request.get_json(True)
-    distributorId = submitted_data["distributorId"]
-    mislabeledSpecies = submitted_data["mislabeledSpecies"]
-    mislabeledAs = submitted_data["mislabeledAs"]
-    r.sadd("report:distributorId:"+distributorId, submitted_data)
-    r.sadd("report:mislabeledSpecies:"+mislabeledSpecies, submitted_data)
-    r.sadd("report:mislabeledAs:"+mislabeledAs, submitted_data)
-    return "true"
+    try:
+        submitted_data = request.get_json(True)
+        print (submitted_data)
+        distributorId = submitted_data["distributorId"]
+        mislabeledSpecies = submitted_data["mislabeledFish"]
+        mislabeledAs = submitted_data["soldAs"]
+        r.sadd("report:distributorId:"+distributorId, submitted_data)
+        r.sadd("report:mislabeledFish:"+mislabeledSpecies, submitted_data)
+        r.sadd("report:soldAs:"+mislabeledAs, submitted_data)
+        return "true"
+    except Exception as e:
+        print(e)
+
 
 
 @app.route('/report',methods = ['GET'])
 def get_reports():
     try:
         distributorId = request.args.get('distributorId')
-        mislabeledSpecies = request.args.get('mislabeledSpecies')
-        mislabeledAs = request.args.get("mislabeledAs") 
+        mislabeledSpecies = request.args.get('mislabeledFish')
+        mislabeledAs = request.args.get("soldAs") 
         full_key = "report:"
         distributor_key = full_key +"distributorId:"+str(distributorId)
-        mislabeled_species_key = full_key +"mislabeledSpecies:"+str(mislabeledSpecies)
-        mislabeled_as_key = full_key +"mislabeledAs:"+str(mislabeledAs)
+        mislabeled_species_key = full_key +"mislabeledFish:"+str(mislabeledSpecies)
+        mislabeled_as_key = full_key +"soldAs:"+str(mislabeledAs)
         #the keys
         keys_to_intersect = []
         if distributorId is not None:

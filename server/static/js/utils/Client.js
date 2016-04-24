@@ -103,6 +103,28 @@ class Client {
         });
     }
 
+    getDistributor(id, cb) {
+        fetch('/distributor/' + id).then((response) => {
+            response.json().then(cb);
+        });
+    }
+    getReports(id, cb) {
+        fetch('/report?distributorId=' + id).then((response) => {
+            response.json().then(cb);
+        });
+    }
+    createReport(data,cb) {
+        fetch('/report', {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data)
+}).then((response) => {
+            response.json().then(cb);
+        });
+    }
 }
 
 export default new Client();
