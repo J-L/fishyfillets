@@ -42,7 +42,7 @@ class Compare extends React.Component {
                 <div className="row">
                     <div className="col-xs-6">
                         <h3>{this.state.fish1.name}</h3>
-                        <img src={this.state.fish1.thumbnail} />
+                        <div className="imageContainer"><img  src={this.state.fish1.thumbnail} /></div>
                         <div>{this.state.fish1.description}</div>
                     </div>
                     <div className="col-xs-6">
@@ -53,7 +53,7 @@ class Compare extends React.Component {
                 </div>
 
                 <h1>Suspect Something?</h1>
-                <Link to={"/report/" + this.state.fish1.id + "/" + this.state.fish2.id} >
+                <Link className="reportLink" to={"/report/" + this.state.fish1.id + "/" + this.state.fish2.id} >
                     <div>Report</div>
                 </Link>
             </div>);
