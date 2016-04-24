@@ -64,12 +64,6 @@ input:focus {
     margin-left: 10px;
 }
 
-.confusedFish {
-    display: block;
-    width: 400px;
-    padding-bottom: 20px
-}
-
 .reportLink{
 	font-size:48pt !important;
 	padding-top:48px;
