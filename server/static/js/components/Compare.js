@@ -38,17 +38,57 @@ class Compare extends React.Component {
 
         return (
             <div>
-                <h1>Compare Fishes</h1>
                 <div className="row">
-                    <div className="col-xs-6">
-                        <h3>{this.state.fish1.name}</h3>
-                        <div className="imageContainer"><img  src={this.state.fish1.thumbnail} /></div>
-                        <div>{this.state.fish1.description}</div>
+                    <div className="col-xs-6 compareBox">
+                        
+                        <div className="imageContainer"><img  src="/static/img/preview/pngs/Kajikia audax.png" height="200" className="center"/></div>
+                        <center><h3> {this.state.fish1.name}</h3></center>
+                        <div className="comparePage" >
+                        <img src="/static/img/weight.png" className="compareIcon"/>
+                        {this.state.fish1.description}
+                        </div>
+                        <div className="comparePage" >
+                        <img src="/static/img/size.png" className="compareIcon"/>
+                        {this.state.fish1.description}
+                        </div>
+                        <div className="comparePage" >
+                        <img src="/static/img/weight.png" className="compareIcon"/>
+                        {this.state.fish1.description}
+                        </div>
+                        <div className="comparePage" >
+                        <img src="/static/img/color.png" className="compareIcon"/>
+                        {this.state.fish1.description}
+                        </div>
+                        <div className="comparePage" >
+                        <img src="/static/img/price.png" className="compareIcon"/>
+                        {this.state.fish1.description}
+                        </div>
                     </div>
-                    <div className="col-xs-6">
-                        <h3>{this.state.fish2.name}</h3>
-                        <img src={this.state.fish2.thumbnail} />
-                        <div>{this.state.fish2.description}</div>
+                    <div className="col-xs-6 compareBox">
+                        
+                        <img src="/static/img/preview/pngs/Kajikia audax.png" height="200" className="center"/>
+                        <center><h3 className="center">{this.state.fish2.name}</h3></center>
+                        <div className="comparePage" >
+                        <img src="/static/img/weight.png" className="compareIcon"/>
+                        {this.state.fish1.description}
+                        </div>
+                        <div className="comparePage" >
+                        <img src="/static/img/size.png" className="compareIcon"/>
+                        {this.state.fish1.description}
+                        </div>
+                        <div className="comparePage" >
+                        <img src="/static/img/weight.png" className="compareIcon"/>
+                        {this.state.fish1.description}
+                        </div>
+                        <div className="comparePage" >
+                        <img src="/static/img/color.png" className="compareIcon"/>
+                        {this.state.fish1.description}
+                        </div>
+                        <div className="comparePage" >
+                        <img src="/static/img/price.png" className="compareIcon"/>
+                        {this.state.fish1.description}
+                        </div>
+
                     </div>
                 </div>
 
