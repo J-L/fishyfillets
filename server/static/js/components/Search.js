@@ -12,6 +12,7 @@ class Search extends React.Component {
         let suggestions = [];
         client.search(searchTerm, (json) => {
             json.matchedFishes.forEach(function(fish) {
+                console.log(fish)
                 suggestions.push(
                     <Link className="searchResult" key={'f_' + fish.id} to={`/fish/${fish.id}`}>
                         <img className="icon" src="img/fish.png" />

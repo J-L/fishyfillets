@@ -8,7 +8,7 @@ import requests
 import redis
 r = redis.StrictRedis(host='localhost', port=6379, db=0)
 app= Flask(__name__)
-
+#/static/img/preview/pngs/
 
 def package_json(query_set,private=False):
     try:

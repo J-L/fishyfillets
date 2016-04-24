@@ -92,17 +92,17 @@ class MockClient {
 class Client {
 
     search(term, cb) {
-        fetch('/search?term=' + searchTerm).then((response) => {
+        fetch('/search?term=' + term).then((response) => {
             response.json().then(cb);
         });
     }
 
     getFish(id, cb) {
-        fetch('/fish/' + props.params.id).then((response) => {
+        fetch('/fish/' + id).then((response) => {
             response.json().then(cb);
         });
     }
 
 }
 
-export default new MockClient();
+export default new Client();

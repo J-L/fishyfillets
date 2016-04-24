@@ -18,6 +18,7 @@ class Fish extends React.Component {
     }
 
     componentDidMount() {
+        console.log('fuck', this);
         client.getFish(this.props.params.id, (resp) => {
             this.setState({
                 fish: resp
