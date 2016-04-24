@@ -37,7 +37,7 @@ class Report extends React.Component {
         client.search(searchTerm, (json) => {
             json.matchedDistributors.forEach((distributor) => {
                 suggestions.push(
-                    <div className="name" onClick={() => this.onSelectDistributor(distributor)}>{distributor.name}</div>
+                    <div className="searchResult" onClick={() => this.onSelectDistributor(distributor)}>{distributor.name}</div>
                 );
             });
 
@@ -60,13 +60,13 @@ class Report extends React.Component {
     render() {
         return (
             <div>
-                <label>Distributor/Seller</label>
+                <label style={{fontSize: "28px"}}>Distributor/Seller</label>
                 {!!this.state.distributor
-                    ? <div onClick={() => this.setState({distributor: null})} className="name">{this.state.distributor.name}</div>
+                    ? <div className="searchResult" style={{borderTop: "3px solid #d9d9d9"}} onClick={() => this.setState({distributor: null})}>{this.state.distributor.name}</div>
                     : <SearchBar placeholder="Sunshine Distributors" autoComplete={this.autoComplete.bind(this)} />}
-                <label>Additional Details</label>
-                <input type="text" onChange={this.onDetailsUpdate.bind(this)} value={this.state.details} />
-                <button onClick={this.onClick.bind(this)}>Submit</button>
+                <label style={{fontSize: "28px", marginTop: '20px'}}>Additional Details</label>
+                <textarea style={{border: "3px solid #d9d9d9", width: "100%", rows: "5", height: "300px"}} onChange={this.onDetailsUpdate.bind(this)} value={this.state.details} />
+                <button style={{"height": "100px", fontSize: "30px"}} onClick={this.onClick.bind(this)}>Submit</button>
             </div>
         )
     }
